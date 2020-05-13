@@ -4,6 +4,8 @@ import './Carousel.scss';
 import {useDispatch} from "react-redux";
 import Typography from '@material-ui/core/Typography';
 import {fetchDetail} from "../../redux/actions/fetchDetail";
+// import animateScrollTo from "animated-scroll-to";
+import {fetchDetailSeries} from "../../redux/actions/fetchDetailSeries";
 
 export const Carousel = (props) => {
     const dispatch = useDispatch();
@@ -16,8 +18,13 @@ export const Carousel = (props) => {
     },[loading, dispatch]);
 
     const getDetail = (id, type, path) => {
-        dispatch(fetchDetail(id, type, path))
-        console.log(id, type, path)
+        console.log(type)
+        if (type === 'movie')
+            dispatch(fetchDetail(id, type, path))
+        if (type === 'tv')
+            dispatch(fetchDetailSeries(id, type, path))
+        // animateScrollTo(0,0)
+
     }
 
     if (loading) return null;

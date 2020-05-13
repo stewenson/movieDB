@@ -6,11 +6,13 @@ import Genres from "../genres/genres";
 import {ReadMore} from "../../styles/LinkStyles";
 import Trailers from "../../components/Trailers/Trailers";
 
-export const MovieInfo = (props) => {
+export const SeriesInfo = (props) => {
     let imageURL;
     if (props.image)
          imageURL = `http://image.tmdb.org/t/p/w1280/` + props.image;
 
+    console.log(props.seriesPath)
+    console.log(props.seriesType)
     return (
         <React.Fragment>
             <div className="mdb-content">
@@ -24,7 +26,8 @@ export const MovieInfo = (props) => {
                 <div className="mdb-content-area">
                     <div className="mdb-content-area-container">
                         <div className="mdb-content-title">
-                            {props.title} {props.release_date ? TitleDate(props.release_date) : ''}
+                            { props.name}
+                            {props.first_air_date ? `${TitleDate(props.first_air_date)} -` : ''} {props.last_air_date ? TitleDate(props.last_air_date) : ''}
                         </div>
                         <Genres genres={props.genres}/>
                         <div className="mdb-content-description">
@@ -32,7 +35,7 @@ export const MovieInfo = (props) => {
                         </div>
                         <div className='mdb-content-buttons'>
                             <Link style={{ textDecoration: 'none' }}
-                                  to={{pathname: `/tmdbapi/${props.path}/detail/${props.movieType}/${props.title}/${props.id}`, query: `/tmdbapi/${props.path}/detail`}}>
+                                  to={{pathname: `/tmdbapi/${props.seriesPath}/detail/${props.seriesType}/${props.name}/${props.id}`, query: `/tmdbapi/${props.seriesPath}/detail`}}>
                                 <ReadMore>
                                     ...Read more
                                 </ReadMore>

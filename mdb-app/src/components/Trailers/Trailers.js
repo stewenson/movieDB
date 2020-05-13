@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import TrailerCarousel from "../../components/TrailerCarousel/TrailerCarousel";
 /* CSS */
 import '../../styles/MovieTrailers.scss';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 const customStyles = {
     content : {
@@ -36,13 +37,15 @@ export default function Trailers(props){
     //     subtitle.style.color = 'orange';
     // }
 
-    function closeModal(){
+    function closeModal(e){
         setIsOpen(false);
     }
 
     return (
         <div>
-            <Button className='trailer-modal' variant="contained" color="secondary" onClick={openModal}>Trailers</Button>
+            <Button className='trailer-modal' variant="contained" color="secondary" onClick={openModal}>
+                <PlayCircleOutlineIcon />  Trailers
+            </Button>
             <Modal
                 isOpen={modalIsOpen}
                 // onAfterOpen={afterOpenModal}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Route, Switch} from "react-router-dom";
-import Header from "./screens/header/header";
+import Header from "./containers/header/header";
 import home from "./screens/home/home";
 import DetailMovie from "./screens/detailMovie/detailMovie";
 
