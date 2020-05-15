@@ -1,17 +1,16 @@
 import axios from "axios";
-export const FETCH_DETAIL_SERIES = "FETCH_DETAIL_SERIES";
+import {ApiKey} from "../../apiKey";
+export const FETCH_VIDEO_MOVIE = "FETCH_VIDEO_MOVIE";
 export const ERROR = "ERROR";
 
-export const fetchDetailSeries = (id, type, path) =>  {
+export const fetchVideoMovie = (id) =>  {
     return async dispatch => {
         await axios
-            .get(`https://api.themoviedb.org/3/tv/${id ? id : '60735'}?api_key=3005d94c9609dfff31bb87e2643367b4&language=en-US`)
+            .get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${ApiKey}&language=en-US`)
             .then(res =>
                 dispatch({
-                    type: FETCH_DETAIL_SERIES,
+                    type: FETCH_VIDEO_MOVIE,
                     payload: res.data,
-                    seriesPath: path,
-                    seriesType: type,
                 })
             )
             .catch(e =>

@@ -4,13 +4,17 @@ import {useSelector} from "react-redux";
 
 export default function DetailMovie() {
     const params = useParams();
-    const data = useSelector(state => state.movies);
+    const movies = useSelector(state => state.movies);
+    const series = useSelector(state => state.series);
 
     let loadData;
     if (params.category === 'movie')
-        loadData = data.detail
+        loadData = movies.detail
     if (params.category === 'tv')
-        loadData = data.detailSeries
+        loadData = series.detailSeries
+
+    if (!loadData) return null;
+
 
     return (
         <div>

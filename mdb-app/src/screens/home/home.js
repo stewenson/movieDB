@@ -1,81 +1,107 @@
 import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {fetchPopularMovies} from "../../redux/actions/fetchPopularMovies";
+import {fetchPopularMovies} from "../../redux/actions/movies/fetchPopularMovies";
 import {Carousel} from "../../components/carousel/Carousel";
 import '../../styles/Home.scss';
 import {MovieInfo} from "../../containers/movieInfo/movieInfo";
-import {fetchPopuparSeries} from "../../redux/actions/fetchPopularSeries";
-import { getVideo} from "../../redux/actions/fetchVideo";
-import {fetchDetail} from "../../redux/actions/fetchDetail";
-import {fetchTopRated} from "../../redux/actions/fetchTopRated";
-import {fetchUpcoming} from "../../redux/actions/fetchUpcoming";
-import {SeriesInfo} from "../../containers/seriesInfo/movieInfo";
-import {fetchDetailSeries} from "../../redux/actions/fetchDetailSeries";
+import {fetchPopuparSeries} from "../../redux/actions/tv/fetchPopularSeries";
+import {fetchVideoMovie} from "../../redux/actions/movies/fetchVideoMovie";
+import {fetchDetail} from "../../redux/actions/detail/fetchDetail";
+import {fetchTopRated} from "../../redux/actions/movies/fetchTopRated";
+import {fetchUpcoming} from "../../redux/actions/movies/fetchUpcoming";
+import {SeriesInfo} from "../../containers/seriesInfo/seriesInfo";
+import {fetchDetailSeries} from "../../redux/actions/detail/fetchDetailSeries";
+import {fetchVideoSeries} from "../../redux/actions/tv/fetchVideoSeries";
+import {fetchTopRatedSeries} from "../../redux/actions/tv/fetchTopRatedSeries";
+import {fetchAiringToday} from "../../redux/actions/tv/fetchAiringToday";
 
 export default function Home() {
     const dispatch = useDispatch();
-    const data = useSelector(state => state.movies);
+    const movies = useSelector(state => state.movies);
+    const series = useSelector(state => state.series)
     const [loading, setLoading] = useState(true);
 
+    // Load movies
     useEffect( () => {
         const loadData = () => {
-            if (!data.detail.id)
+            if (!movies.detail.id)
                 dispatch(fetchDetail())
-            if (!data.detailSeries.id)
-                dispatch(fetchDetailSeries())
             dispatch(fetchPopularMovies())
-            dispatch(fetchPopuparSeries())
             dispatch(fetchTopRated())
             dispatch(fetchUpcoming())
-            if (data.detail.id)
-                dispatch(getVideo(data.detail.id, data.movieType ? data.movieType : 'movie'))
-            if (data.detailSeries.id)
-                dispatch(getVideo(data.detailSeries.id, data.seriesType ? data.seriesType : 'tv'))
-
+            if (movies.detail.id)
+                dispatch(fetchVideoMovie(movies.detail.id))
             setLoading(false);
         };
         loadData();
-    }, [loading, dispatch, data.detail.id, data.movieType, data.detailSeries.id, data.seriesType])
+    }, [loading, dispatch, movies.detail.id])
 
-    // console.log(data)
+    // // Load series
+    useEffect( () => {
+        const loadData = () => {
+            if (!series.detailSeries.id)
+                dispatch(fetchDetailSeries())
+            dispatch(fetchPopuparSeries())
+            dispatch(fetchTopRatedSeries())
+            dispatch(fetchAiringToday())
+            if (series.detailSeries.id)
+                dispatch(fetchVideoSeries(series.detailSeries.id))
+            setLoading(false);
+        };
+        loadData();
+    }, [loading, dispatch, series.detailSeries.id])
+
+    console.log(series)
+
     return (
         <React.Fragment>
-            <div>
+            {/*
+                Movies
+            */}
+            <div className='mdb-movieInfo-container'>
                 <MovieInfo
-                    videos={data.video}
-                    id={data.detail.id}
-                    image={data.detail.backdrop_path}
-                    title={data.detail.original_title}
-                    overview={data.detail.overview}
-                    release_date={data.detail.release_date}
-                    genres={data.detail.genres}
-                    path={data.path}
-                    movieType={data.movieType}
+                    videos={movies.videoMovies}
+                    id={movies.detail.id}
+                    image={movies.detail.backdrop_path}
+                    title={movies.detail.original_title}
+                    overview={movies.detail.overview}
+                    tagline={movies.detail.tagline}
+                    release_date={movies.detail.release_date}
+                    genres={movies.detail.genres}
+                    path={movies.path}
+                    movieType={movies.movieType}
+                    vote_average={movies.detail.vote_average}
+                    runtime={movies.detail.runtime}
                 />
             </div>
-                <Carousel data={data.upcoming.results} path={'upcoming'} title={'Upcoming Movies'} category={'movie'}/>
-                <Carousel data={data.topRated.results} path={'topRated'} title={'Top Rated Movies'} category={'movie'}/>
-                <Carousel data={data.movies.results} path={'popularMovie'} title={'Popular Movies'} category={'movie'}/>
+                <Carousel data={movies.upcoming.results} path={'upcoming'} title={'Upcoming Movies'} category={'movie'}/>
+                <Carousel data={movies.topRated.results} path={'topRated'} title={'Top Rated Movies'} category={'movie'}/>
+                <Carousel data={movies.movies.results} path={'popularMovie'} title={'Popular Movies'} category={'movie'}/>
 
-            <div>
+            {/*
+                    Seriies
+            */}
+            <div className='mdb-seriesInfo-container'>
                 <SeriesInfo
-                    videos={data.video}
-                    id={data.detailSeries.id}
-                    image={data.detailSeries.backdrop_path}
-                    name={data.detailSeries.name}
-                    overview={data.detailSeries.overview}
-                    first_air_date={data.detailSeries.first_air_date}
-                    last_air_date={data.detailSeries.last_air_date}
-                    genres={data.detailSeries.genres}
-                    seriesPath={data.seriesPath}
-                    seriesType={data.seriesType}
+                    videos={series.videoSeries}
+                    id={series.detailSeries.id}
+                    image={series.detailSeries.backdrop_path}
+                    name={series.detailSeries.name}
+                    overview={series.detailSeries.overview}
+                    first_air_date={series.detailSeries.first_air_date}
+                    last_air_date={series.detailSeries.last_air_date}
+                    genres={series.detailSeries.genres}
+                    vote_average={series.detailSeries.vote_average}
+                    episode_run_time={series.detailSeries.episode_run_time}
+                    number_of_seasons={series.detailSeries.number_of_seasons}
+                    number_of_episodes={series.detailSeries.number_of_episodes}
+                    seriesPath={series.seriesPath}
+                    seriesType={series.seriesType}
                 />
             </div>
-                <Carousel data={data.series.results} path={'popularSeries'} title={'Popular Series'} category={'tv'}/>
-                {/*<Carousel ddata={data.documentary.results} path={'popularMovie'} title={'Popular Family Movies'} marginTop={'3%'} category={'movie'}/>/>*/}
-                {/*<Carousel data={dataSeries} path={'popularSeries'} title={'Popular Series'} category={'tv'}/>*/}
-                {/*<Carousel data={dataFamily} path={'popularMovie'} title={'Popular Family Movies'} marginTop={'3%'} category={'movie'}/>*/}
-                {/*<Carousel data={dataDocument} path={'popularDocument'} title={'Popular Documentary Movies'} marginTop={'3%'} category={'movie'}/>*/}
+                <Carousel data={series.airToday.results} path={'airToday'} title={'TV shows that are airing today'} category={'tv'}/>
+                <Carousel data={series.series.results} path={'popularSeries'} title={'Popular Series'} category={'tv'}/>
+                <Carousel data={series.topRatedSeries.results} path={'topRatedSeries'} title={'Top Rated Series'} category={'tv'}/>
         </React.Fragment>
     )
 }

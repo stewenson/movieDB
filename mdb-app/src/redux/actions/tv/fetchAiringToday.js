@@ -1,14 +1,15 @@
 import axios from "axios";
-export const FETCH_POPULAR_MOVIES = "FETCH_POPULAR_MOVIES";
+import {ApiKey} from "../../apiKey";
+export const FETCH_AIR_TODAY = "FETCH_AIR_TODAY";
 export const ERROR = "ERROR";
 
-export const fetchPopularMovies = () => {
+export const fetchAiringToday =()=> {
     return async dispatch => {
         await axios
-            .get(`https://api.themoviedb.org/3/movie/popular?api_key=3005d94c9609dfff31bb87e2643367b4&language=en-US&page=1`)
+            .get(`https://api.themoviedb.org/3/tv/airing_today?api_key=${ApiKey}&language=en-US&page=1`)
             .then(res =>
                 dispatch({
-                    type: FETCH_POPULAR_MOVIES,
+                    type: FETCH_AIR_TODAY,
                     payload: res.data,
                 })
             )

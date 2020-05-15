@@ -1,14 +1,15 @@
 import axios from "axios";
-export const FETCH_TOP_RATED = "FETCH_TOP_RATED";
+import {ApiKey} from "../../apiKey";
+export const FETCH_MOVIE_BY_GENRE = "FETCH_MOVIE_BY_GENRE";
 export const ERROR = "ERROR";
 
-export const fetchTopRated = () => {
+export const fetchMovieByGenre = (id) => {
     return async dispatch => {
         await axios
-            .get(`https://api.themoviedb.org/3/movie/top_rated?api_key=3005d94c9609dfff31bb87e2643367b4&language=en-US&page=1`)
+            .get(`https://api.themoviedb.org/3/discover/movie?api_key=${ApiKey}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=${id}`)
             .then(res =>
                 dispatch({
-                    type: FETCH_TOP_RATED,
+                    type: FETCH_MOVIE_BY_GENRE,
                     payload: res.data,
                 })
             )

@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.2.1",
     "animated-scroll-to": "^2.0.8",
     "axios": "^0.19.1",
+    "dotenv": "^8.2.0",
     "formik": "^2.1.4",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",

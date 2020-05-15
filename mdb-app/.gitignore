@@ -4,12 +4,16 @@
 /node_modules
 /.pnp
 .pnp.js
+.idea
 
 # testing
 /coverage
 
 # production
 /build
+
+#key
+/src/redux/apiKey
 
 # config
 src/config

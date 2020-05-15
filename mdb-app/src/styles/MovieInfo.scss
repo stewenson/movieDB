@@ -10,7 +10,7 @@
 
 .mdb-content {
   position: relative;
-  height: 36vw;
+  height: 30vw;
   margin-top: -50px;
   animation: animateMovieinfo 1.6s;
   z-index: 1;
@@ -76,11 +76,27 @@
   }
 
   .mdb-content-title {
-    font-size: 45px;
+    font-size: 50px;
     color: #fff;
+    margin-bottom: 10px;
     font-weight: 700;
     animation: animateMovieinfo 1.6s;
-
+    p{
+      padding-top: 5px;
+      font-size: 20px;
+    }
+  }
+  .mdb-content-subtitle {
+    display: inline-flex;
+    font-size: 20px;
+    color: #fff;
+    animation: animateMovieinfo 1.6s;
+    p{
+      margin-bottom: 0px;
+      margin-top: 0px;
+      padding: 0px 5px;
+      border-left: 2px solid white;
+    };
   }
 
   .mdb-content-description {
@@ -109,7 +125,7 @@
 @media only screen and (max-width: 1630px) {
   .mdb-content {
     position: relative;
-    height: 60vw;
+    height: 35vw;
     animation: animateMovieinfo 1.6s;
 
     .mdb-content-area-container {
@@ -145,7 +161,7 @@
 
   .mdb-content {
     position: relative;
-    height: 70vw;
+    height: 55vw;
     margin-top: -50px;
     animation: animateMovieinfo 1.6s;
 
@@ -182,7 +198,7 @@
 
   .mdb-content {
     position: relative;
-    height: 65vw;
+    height: 55vw;
     animation: animateMovieinfo 1.6s;
 
     .mdb-content-area-container {
@@ -226,7 +242,7 @@
 
   .mdb-content {
     position: relative;
-    height: 97vw;
+    height: 70vw;
     animation: animateMovieinfo 1.6s;
 
     .mdb-content-area-container {
@@ -270,7 +286,7 @@
 
   .mdb-content {
     position: relative;
-    height: 120vw;
+    height: 90vw;
     animation: animateMovieinfo 1.6s;
 
     .mdb-content-area-container {

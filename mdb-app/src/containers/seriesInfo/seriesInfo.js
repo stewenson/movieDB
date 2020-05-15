@@ -5,14 +5,13 @@ import {TitleDate} from "../../components/TitleDate/TitleDate";
 import Genres from "../genres/genres";
 import {ReadMore} from "../../styles/LinkStyles";
 import Trailers from "../../components/Trailers/Trailers";
+import Grid from '@material-ui/core/Grid';
 
 export const SeriesInfo = (props) => {
     let imageURL;
     if (props.image)
          imageURL = `http://image.tmdb.org/t/p/w1280/` + props.image;
 
-    console.log(props.seriesPath)
-    console.log(props.seriesType)
     return (
         <React.Fragment>
             <div className="mdb-content">
@@ -27,15 +26,38 @@ export const SeriesInfo = (props) => {
                     <div className="mdb-content-area-container">
                         <div className="mdb-content-title">
                             { props.name}
-                            {props.first_air_date ? `${TitleDate(props.first_air_date)} -` : ''} {props.last_air_date ? TitleDate(props.last_air_date) : ''}
                         </div>
-                        <Genres genres={props.genres}/>
+                        <Grid container spacing={1} className="mdb-content-subtitle">
+                            <Grid item>
+                                <p>
+                                    {props.first_air_date ? `${TitleDate(props.first_air_date)} -` : ''} {props.last_air_date ? TitleDate(props.last_air_date) : ''}
+                                </p>
+                            </Grid>
+                            <Grid item style={{ color: 'gold'}}>
+                                <p>
+                                    {props.vote_average}/10
+                                </p>
+                            </Grid>
+                            <Grid item>
+                                <p>
+                                    {props.episode_run_time} min
+                                </p>
+                            </Grid>
+                            <Grid item>
+                                <p>
+                                    Seasons: {props.number_of_seasons} Episodes: {props.number_of_episodes}
+                                </p>
+                            </Grid>
+                        </Grid>
+                        <div>
+                            <Genres genres={props.genres}/>
+                        </div>
                         <div className="mdb-content-description">
-                            {props.overview}
+                            {props.overview ? props.overview.slice(0, 500) +'...' : ''}
                         </div>
                         <div className='mdb-content-buttons'>
                             <Link style={{ textDecoration: 'none' }}
-                                  to={{pathname: `/tmdbapi/${props.seriesPath}/detail/${props.seriesType}/${props.name}/${props.id}`, query: `/tmdbapi/${props.seriesPath}/detail`}}>
+                                  to={{pathname: `/tmdbapi/${props.seriesPath ? props.seriesPath : 'popularSeries'}/detail/${props.seriesType ? props.seriesType : 'tv'}/${props.name}/${props.id}`, query: `/tmdbapi/${props.seriesPath}/detail`}}>
                                 <ReadMore>
                                     ...Read more
                                 </ReadMore>

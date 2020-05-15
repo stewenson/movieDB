@@ -3,9 +3,9 @@ import Swiper from 'react-id-swiper';
 import './Carousel.scss';
 import {useDispatch} from "react-redux";
 import Typography from '@material-ui/core/Typography';
-import {fetchDetail} from "../../redux/actions/fetchDetail";
-// import animateScrollTo from "animated-scroll-to";
-import {fetchDetailSeries} from "../../redux/actions/fetchDetailSeries";
+import {fetchDetail} from "../../redux/actions/detail/fetchDetail";
+import animateScrollTo from "animated-scroll-to";
+import {fetchDetailSeries} from "../../redux/actions/detail/fetchDetailSeries";
 
 export const Carousel = (props) => {
     const dispatch = useDispatch();
@@ -18,13 +18,14 @@ export const Carousel = (props) => {
     },[loading, dispatch]);
 
     const getDetail = (id, type, path) => {
-        console.log(type)
-        if (type === 'movie')
+        if (type === 'movie'){
             dispatch(fetchDetail(id, type, path))
-        if (type === 'tv')
+            animateScrollTo(0,0)
+        }
+        if (type === 'tv'){
             dispatch(fetchDetailSeries(id, type, path))
-        // animateScrollTo(0,0)
-
+            animateScrollTo(1600,0)
+        }
     }
 
     if (loading) return null;

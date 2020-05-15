@@ -7,7 +7,8 @@ export const LinkStyle = styled.div`
 export const TextLink = styled.div`
    color: white;
    &:hover {
-    background: #555;
+    background: bottom;
+    transform: scale(1.1);
   }  
 `;
 
@@ -15,6 +16,7 @@ export const ReadMore = styled.div`
    color: red;
    font-size: 20px;
    &:hover {
-    background: #555;
+    background: bottom;
+    transform: scale(1.2);
   }  
 `;
