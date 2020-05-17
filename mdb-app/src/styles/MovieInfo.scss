@@ -122,205 +122,49 @@
   }
 }
 
-@media only screen and (max-width: 1630px) {
-  .mdb-content {
-    position: relative;
-    height: 35vw;
-    animation: animateMovieinfo 1.6s;
-
-    .mdb-content-area-container {
-      padding: 100px 80px !important;
-      color: wheat;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-content-title {
-      font-size: 35px !important;
-      color: #fff;
-      font-weight: 700;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-genres {
-      padding: 10px 0px;
-      font-size: 20px !important;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-content-description {
-      font-size: 1.2vw !important;
-      color: #999;
-      margin-top: 5px;
-      max-width: 500px;
-      animation: animateMovieinfo 1.6s;
-    }
-  }
-}
-
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 361px) {
 
   .mdb-content {
-    position: relative;
-    height: 55vw;
-    margin-top: -50px;
-    animation: animateMovieinfo 1.6s;
-
-    .mdb-content-area-container {
-      padding: 100px 70px !important;
-      color: wheat;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-content-title {
-      font-size: 35px !important;
-      color: #fff;
-      font-weight: 700;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-genres {
-      padding: 10px 0px;
-      font-size: 20px !important;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-content-description {
-      font-size: 1.8vw !important;
-      color: #999;
-      margin-top: 10px;
-      max-width: 500px;
-      animation: animateMovieinfo 1.6s;
-    }
-  }
-}
-
-@media only screen and (max-width: 900px) {
-
-  .mdb-content {
-    position: relative;
-    height: 55vw;
-    animation: animateMovieinfo 1.6s;
-
-    .mdb-content-area-container {
-      padding: 100px 70px !important;
-      color: wheat;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-content-title {
-      font-size: 25px !important;
-      color: #fff;
-      font-weight: 700;
-      animation: animateMovieinfo 1.6s;
-    }
-    .mdb-content-buttons {
-      display: flex;
-      padding-top: 10px;
-      button {
-        margin-left: 50px;
-        font-size: x-small;
-      }
-      animation: animateMovieinfo 1.6s;
-    }
-    .mdb-genres {
-      padding: 10px 0px;
-      font-size: 20px !important;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-content-description {
-      font-size: 1.5vw !important;
-      color: #999;
-      margin-top: 10px;
-      max-width: 350px;
-      animation: animateMovieinfo 1.6s;
-    }
-  }
-}
-
-@media only screen and (max-width: 700px) {
-
-  .mdb-content {
-    position: relative;
-    height: 70vw;
-    animation: animateMovieinfo 1.6s;
-
-    .mdb-content-area-container {
-      padding: 90px 50px !important;
-      color: wheat;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-content-title {
-      font-size: 30px !important;
-      color: #fff;
-      font-weight: 700;
-      animation: animateMovieinfo 1.6s;
-    }
-    .mdb-content-buttons {
-      display: flex;
-      padding-top: 10px;
-      button {
-        margin-left: 50px;
-        font-size: x-small;
-      }
-      animation: animateMovieinfo 1.6s;
-    }
-    .mdb-genres {
-      padding: 5px 0px;
-      font-size: 20px !important;
-      animation: animateMovieinfo 1.6s;
-    }
-
-    .mdb-content-description {
-      font-size: 2vw !important;
-      color: #999;
-      margin-top: 5px;
-      max-width: 350px;
-      animation: animateMovieinfo 1.6s;
-    }
-  }
-}
-
-@media only screen and (max-width: 490px) {
-
-  .mdb-content {
+    width: 100% !important;
     position: relative;
     height: 90vw;
     animation: animateMovieinfo 1.6s;
 
     .mdb-content-area-container {
-      padding: 90px 20px !important;
+      padding: 60px 20px !important;
       color: wheat;
       animation: animateMovieinfo 1.6s;
+      p {
+        font-size: 13px;
+      }
     }
 
     .mdb-content-title {
-      font-size: 25px !important;
-      color: #fff;
-      font-weight: 700;
+      font-size: 5vw !important;
       animation: animateMovieinfo 1.6s;
     }
+
     .mdb-content-buttons {
       display: flex;
       padding-top: 10px;
+      a .sc-AxiKw.gEDBZO {
+        font-size: 15px !important;
+      }
       button {
         margin-left: 50px;
-        font-size: x-small;
+        font-size: xx-small;
       }
       animation: animateMovieinfo 1.6s;
     }
     .mdb-genres {
       padding: 5px 0px;
-      font-size: 18px !important;
+      font-size: 13px !important;
       animation: animateMovieinfo 1.6s;
     }
 
     .mdb-content-description {
-      font-size: 2.8vw !important;
-      color: #999;
+      font-size: 3vw !important;
       margin-top: 5px;
-      max-width: 350px;
       animation: animateMovieinfo 1.6s;
     }
   }

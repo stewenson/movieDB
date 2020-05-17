@@ -1,0 +1,298 @@
+@keyframes animate {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// Detail screens
+.mdb-detail {
+  position: relative;
+  height: 99vh;
+  margin-top: -50px;
+  animation: animateMovieinfo 1.6s;
+  z-index: 1;
+
+  .mdb-detail-background,
+  .mdb-detail-background-shadow,
+  .mdb-detail-background-image,
+  .mdb-detail-area {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    animation: animateMovieinfo 1.6s;
+  }
+  //
+  .mdb-detail-background {
+    position: fixed;
+    left: 0;
+    right: 0;
+    animation: animateMovieinfo 1.6s;
+  //
+    .mdb-detail-background-shadow {
+      left: 0;
+      background: #000;
+      width: 40%;
+      z-index: 2;
+      animation: animateMovieinfo 1.6s;
+
+      &:before {
+        content: '';
+        position: absolute;
+        z-index: 10;
+        //background-image: linear-gradient(to right, #000, transparent);
+        background-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0));
+        top: 0;
+        bottom: 0;
+        left: 100%;
+        width: 15vw;
+      }
+    }
+
+    // Bckground image
+    .mdb-detail-background-image {
+      right: 0;
+      width: 70%;
+      height: 100%;
+      background-position: center 10%;
+      background-size: cover;
+      z-index: 1;
+      animation: animateMovieinfo 1.6s;
+    }
+  }
+
+  .mdb-detail-area {
+    left: 0;
+    right: 0;
+    height: 100%;
+    z-index: 3;
+    animation: animateMovieinfo 1.6s;
+
+    .mdb-detail-area-container {
+      padding: 100px 50px;
+      color: wheat;
+      animation: animateMovieinfo 1.6s;
+    }
+  }
+
+  .mdb-detail-title {
+    font-size: 3vw;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 700;
+    animation: animateMovieinfo 1.6s;
+    p{
+      padding-top: 5px;
+      font-size: 20px;
+    }
+  }
+  .mdb-detail-subtitle {
+    font-size: 1.8vw;
+    display: inline-flex;
+    color: #fff;
+    animation: animateMovieinfo 1.6s;
+    p{
+      margin-bottom: 0px;
+      margin-top: 0px;
+      padding: 0px 5px;
+      border-left: 2px solid white;
+    };
+  }
+
+  .mdb-detail-description {
+    font-size: 0.9vw;
+    color: #999;
+    margin-top: 0;
+    max-width: 90vh;
+    animation: animateMovieinfo 1.6s;
+  }
+
+  .mdb-detail-cast {
+    max-width: 90vh;
+  }
+
+  .mdb-detail-buttons {
+    display: flex;
+    padding-top: 10px;
+    button {
+      margin-left: 50px;
+      font-size: x-small;
+    }
+    animation: animateMovieinfo 1.6s;
+  }
+}
+
+@media only screen and (max-width: 361px) {
+  .mdb-detail-background-shadow {
+    width: 55% !important;
+    animation: animateMovieinfo 1.6s;
+
+    &:before {
+      background-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0)) !important;
+    }
+  }
+  .mdb-detail .mdb-detail-description {
+    font-size: 4vw !important;
+    max-width: 34vh !important;
+    animation: animateMovieinfo 1.6s;
+  }
+  .mdb-detail-area-container {
+    padding: 70px 30px !important;
+    animation: animateMovieinfo 1.6s;
+  }
+  .mdb-detail-title {
+    font-size: 7vw !important;
+  }
+  .mdb-detail-subtitle {
+    font-size: 4vw !important;
+  }
+  .mdb-detail-description {
+    padding-top: 5px;
+    font-size: 3vw !important;
+    max-width: 70vh !important;
+  }
+  .mdb-detail-cast {
+    max-width: 70vh !important;
+  }
+}
+//
+//@media only screen and (max-width: 2300px) {
+//  .mdb-detail-description {
+//    padding-top: 15px;
+//    font-size: 1.5vw !important;
+//    max-width: 60vh !important;
+//  }
+//  .mdb-detail-cast {
+//    max-width: 60vh !important;
+//  }
+//}
+//
+//
+//@media only screen and (max-width: 1100px) {
+//
+//  .mdb-content {
+//    position: relative;
+//    height: 55vw;
+//    margin-top: -50px;
+//    animation: animateMovieinfo 1.6s;
+//
+//    .mdb-content-area-container {
+//      padding: 100px 70px !important;
+//      color: wheat;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//
+//    .mdb-content-title {
+//      font-size: 35px !important;
+//      color: #fff;
+//      font-weight: 700;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//
+//    .mdb-genres {
+//      padding: 10px 0px;
+//      font-size: 20px !important;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//
+//    .mdb-content-description {
+//      font-size: 1.8vw !important;
+//      color: #999;
+//      margin-top: 10px;
+//      max-width: 500px;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//  }
+//}
+//
+//
+//@media only screen and (max-width: 700px) {
+//
+//  .mdb-content {
+//    position: relative;
+//    height: 70vw;
+//    animation: animateMovieinfo 1.6s;
+//
+//    .mdb-content-area-container {
+//      padding: 90px 50px !important;
+//      color: wheat;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//
+//    .mdb-content-title {
+//      font-size: 30px !important;
+//      color: #fff;
+//      font-weight: 700;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//    .mdb-content-buttons {
+//      display: flex;
+//      padding-top: 10px;
+//      button {
+//        margin-left: 50px;
+//        font-size: x-small;
+//      }
+//      animation: animateMovieinfo 1.6s;
+//    }
+//    .mdb-genres {
+//      padding: 5px 0px;
+//      font-size: 20px !important;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//
+//    .mdb-content-description {
+//      font-size: 2vw !important;
+//      color: #999;
+//      margin-top: 5px;
+//      max-width: 350px;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//  }
+//}
+//
+//@media only screen and (max-width: 490px) {
+//
+//  .mdb-content {
+//    position: relative;
+//    height: 90vw;
+//    animation: animateMovieinfo 1.6s;
+//
+//    .mdb-content-area-container {
+//      padding: 90px 20px !important;
+//      color: wheat;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//
+//    .mdb-content-title {
+//      font-size: 25px !important;
+//      color: #fff;
+//      font-weight: 700;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//    .mdb-content-buttons {
+//      display: flex;
+//      padding-top: 10px;
+//      button {
+//        margin-left: 50px;
+//        font-size: x-small;
+//      }
+//      animation: animateMovieinfo 1.6s;
+//    }
+//    .mdb-genres {
+//      padding: 5px 0px;
+//      font-size: 18px !important;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//
+//    .mdb-content-description {
+//      font-size: 2.8vw !important;
+//      color: #999;
+//      margin-top: 5px;
+//      max-width: 350px;
+//      animation: animateMovieinfo 1.6s;
+//    }
+//  }
+//}

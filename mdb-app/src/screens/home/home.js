@@ -51,8 +51,6 @@ export default function Home() {
         loadData();
     }, [loading, dispatch, series.detailSeries.id])
 
-    console.log(series)
-
     return (
         <React.Fragment>
             {/*

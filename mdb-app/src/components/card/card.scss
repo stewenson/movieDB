@@ -1,0 +1,73 @@
+$position-relative: relative;
+$position-absolute: absolute;
+@mixin details {
+  position: $position-absolute;
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: 0.5s;
+  z-index: 2;
+  bottom: -70px;
+}
+
+.mdb-card{
+  position: $position-relative;
+  height: 100%;
+  overflow: hidden;
+  .mdb-poster {
+    position: relative;
+    overflow: hidden;
+  }
+}
+.mdb-details {
+  @include details;
+  height: 90%;
+  h3 {
+    font-size: 15px;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  h3 span {
+    font-size: 10px;
+    color: gold;
+    display: none;
+  }
+}
+.mdb-card .mdb-poster:before {
+  content: '';
+  position: $position-absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #000 20%, transparent);
+  transition: 0.5s;
+  z-index: 1;
+}
+.mdb-card:hover .mdb-details {
+  bottom: 0;
+  h3 span {
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+}
+@media only screen and (max-width: 361px) {
+  .mdb-details {
+    @include details;
+    height: 100%;
+    h3 {
+      font-size: 2.2vw;
+    }
+    h3 span {
+      font-size: 1.5vw;
+    }
+  }
+}
+//@media only screen and (max-width: 1700px) {
+//  .mdb-details {
+//    @include details;
+//    height: 80%;
+//  }
+//}
