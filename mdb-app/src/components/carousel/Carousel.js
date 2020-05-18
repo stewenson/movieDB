@@ -34,7 +34,7 @@ export const Carousel = (props) => {
         breakpoints: {
             // when window width is >= 320px
             320: {
-                slidesPerView: 2,
+                slidesPerView: 4,
                 spaceBetween: 1
             },
             // when window width is >= 480px

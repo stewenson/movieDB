@@ -79,7 +79,7 @@
   }
 
   .mdb-detail-title {
-    font-size: 3vw;
+    font-size: 3em;
     color: #fff;
     margin-bottom: 10px;
     font-weight: 700;
@@ -90,7 +90,7 @@
     }
   }
   .mdb-detail-subtitle {
-    font-size: 1.8vw;
+    font-size: 1.5em;
     display: inline-flex;
     color: #fff;
     animation: animateMovieinfo 1.6s;
@@ -103,7 +103,8 @@
   }
 
   .mdb-detail-description {
-    font-size: 0.9vw;
+    padding-top: 10px;
+    font-size: 1em;
     color: #999;
     margin-top: 0;
     max-width: 90vh;
@@ -111,6 +112,8 @@
   }
 
   .mdb-detail-cast {
+    margin-top: 10px;
+    margin-bottom: -10px;
     max-width: 90vh;
   }
 
@@ -125,174 +128,117 @@
   }
 }
 
-@media only screen and (max-width: 361px) {
-  .mdb-detail-background-shadow {
-    width: 55% !important;
-    animation: animateMovieinfo 1.6s;
+@media only screen and (max-width: 1700px) {
+  .mdb-detail-description {
+    padding-top: 15px;
+    font-size: 1.5vw !important;
+    max-width: 60vh !important;
+  }
+  .mdb-detail-cast {
+    max-width: 90vh !important;
+  }
+}
 
-    &:before {
-      background-image: linear-gradient(to right, rgba(0,0,0,1) 50%, rgba(0,0,0,0)) !important;
-    }
-  }
-  .mdb-detail .mdb-detail-description {
-    font-size: 4vw !important;
-    max-width: 34vh !important;
-    animation: animateMovieinfo 1.6s;
-  }
+@media only screen and (max-width: 1100px) {
   .mdb-detail-area-container {
     padding: 70px 30px !important;
+    color: wheat;
     animation: animateMovieinfo 1.6s;
   }
   .mdb-detail-title {
-    font-size: 7vw !important;
+    padding-top: 10px;
+    font-size: 2.3em !important;
   }
   .mdb-detail-subtitle {
-    font-size: 4vw !important;
+    font-size: 1.5em !important;
   }
   .mdb-detail-description {
-    padding-top: 5px;
-    font-size: 3vw !important;
-    max-width: 70vh !important;
+    max-width: 60vh !important;
+    font-size: 1.2em !important;
   }
   .mdb-detail-cast {
-    max-width: 70vh !important;
+    max-width: 60vh !important;
   }
 }
-//
-//@media only screen and (max-width: 2300px) {
-//  .mdb-detail-description {
-//    padding-top: 15px;
-//    font-size: 1.5vw !important;
-//    max-width: 60vh !important;
-//  }
-//  .mdb-detail-cast {
-//    max-width: 60vh !important;
-//  }
-//}
-//
-//
-//@media only screen and (max-width: 1100px) {
-//
-//  .mdb-content {
-//    position: relative;
-//    height: 55vw;
-//    margin-top: -50px;
-//    animation: animateMovieinfo 1.6s;
-//
-//    .mdb-content-area-container {
-//      padding: 100px 70px !important;
-//      color: wheat;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//
-//    .mdb-content-title {
-//      font-size: 35px !important;
-//      color: #fff;
-//      font-weight: 700;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//
-//    .mdb-genres {
-//      padding: 10px 0px;
-//      font-size: 20px !important;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//
-//    .mdb-content-description {
-//      font-size: 1.8vw !important;
-//      color: #999;
-//      margin-top: 10px;
-//      max-width: 500px;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//  }
-//}
-//
-//
-//@media only screen and (max-width: 700px) {
-//
-//  .mdb-content {
-//    position: relative;
-//    height: 70vw;
-//    animation: animateMovieinfo 1.6s;
-//
-//    .mdb-content-area-container {
-//      padding: 90px 50px !important;
-//      color: wheat;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//
-//    .mdb-content-title {
-//      font-size: 30px !important;
-//      color: #fff;
-//      font-weight: 700;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//    .mdb-content-buttons {
-//      display: flex;
-//      padding-top: 10px;
-//      button {
-//        margin-left: 50px;
-//        font-size: x-small;
-//      }
-//      animation: animateMovieinfo 1.6s;
-//    }
-//    .mdb-genres {
-//      padding: 5px 0px;
-//      font-size: 20px !important;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//
-//    .mdb-content-description {
-//      font-size: 2vw !important;
-//      color: #999;
-//      margin-top: 5px;
-//      max-width: 350px;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//  }
-//}
-//
-//@media only screen and (max-width: 490px) {
-//
-//  .mdb-content {
-//    position: relative;
-//    height: 90vw;
-//    animation: animateMovieinfo 1.6s;
-//
-//    .mdb-content-area-container {
-//      padding: 90px 20px !important;
-//      color: wheat;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//
-//    .mdb-content-title {
-//      font-size: 25px !important;
-//      color: #fff;
-//      font-weight: 700;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//    .mdb-content-buttons {
-//      display: flex;
-//      padding-top: 10px;
-//      button {
-//        margin-left: 50px;
-//        font-size: x-small;
-//      }
-//      animation: animateMovieinfo 1.6s;
-//    }
-//    .mdb-genres {
-//      padding: 5px 0px;
-//      font-size: 18px !important;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//
-//    .mdb-content-description {
-//      font-size: 2.8vw !important;
-//      color: #999;
-//      margin-top: 5px;
-//      max-width: 350px;
-//      animation: animateMovieinfo 1.6s;
-//    }
-//  }
-//}
+
+@media only screen and (max-width: 800px) {
+  .mdb-detail-area-container {
+    padding: 70px 30px !important;
+    color: wheat;
+    animation: animateMovieinfo 1.6s;
+  }
+  .mdb-detail-title {
+    font-size: 2em !important;
+  }
+  .mdb-detail-subtitle {
+    font-size: 1.5em !important;
+  }
+  .mdb-detail-description {
+    max-width: 40vh !important;
+    font-size: 1.2em !important;
+  }
+  .mdb-detail-cast {
+    max-width: 100vh !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .mdb-detail-area-container {
+    padding: 70px 30px !important;
+    color: wheat;
+    animation: animateMovieinfo 1.6s;
+  }
+  .mdb-detail-title {
+    font-size: 1.7em !important;
+  }
+  .mdb-detail-subtitle {
+    font-size: 1.2em !important;
+  }
+  .mdb-detail-description {
+    max-width: 40vh !important;
+    font-size: 1.2em !important;
+  }
+  .mdb-detail-cast {
+    max-width: 100vh !important;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .mdb-detail-area-container {
+    padding: 70px 20px !important;
+    color: wheat;
+    animation: animateMovieinfo 1.6s;
+  }
+  .mdb-detail-title {
+    font-size: 1.7em !important;
+  }
+  .mdb-detail-subtitle {
+    font-size: 1.2em !important;
+  }
+  .mdb-detail-description {
+    max-width: 30vh !important;
+    font-size: 1em !important;
+  }
+  .mdb-detail-cast {
+    max-width: 100vh !important;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .mdb-detail-area-container {
+    padding: 70px 20px !important;
+    color: wheat;
+    animation: animateMovieinfo 1.6s;
+  }
+  .mdb-detail-title {
+    font-size: 1.5em !important;
+  }
+  .mdb-detail-subtitle {
+    font-size: 1em !important;
+  }
+  .mdb-detail-description {
+    font-size: 1em !important;
+  }
+  .mdb-detail-cast {
+    max-width: 100vh !important;
+  }
+}
