@@ -40,7 +40,7 @@ export const CreditsCaousel = (props) => {
                     </div>
                 ))
                 :
-                    ''
+                   ''
                 }
             </Swiper>
         </div>

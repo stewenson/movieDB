@@ -2,11 +2,11 @@ import React from 'react';
 import Modal from 'react-modal';
 /* Material ui */
 import Button from '@material-ui/core/Button';
+import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 /* Components */
 import TrailerCarousel from "../../components/TrailerCarousel/TrailerCarousel";
 /* CSS */
 import '../../styles/MovieTrailers.scss';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 
 const customStyles = {
     content : {
@@ -43,8 +43,8 @@ export default function Trailers(props){
 
     return (
         <div>
-            <Button className='trailer-modal' variant="contained" color="secondary" onClick={openModal}>
-                <PlayCircleOutlineIcon />  Trailers
+            <Button className='trailer-modal' color="secondary" onClick={openModal}>
+                <PlayCircleOutlineIcon /> Trailers
             </Button>
             <Modal
                 isOpen={modalIsOpen}

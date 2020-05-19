@@ -7,6 +7,9 @@ import {fetchDetailSeries} from "../../redux/actions/detail/fetchDetailSeries";
 import {fetchCredits} from "../../redux/actions/detail/fetchCredits";
 import {CreditsCaousel} from "../../components/creditsCarousel/creditsCarousel";
 import {clearCredits} from "../../redux/actions/detail/clearCredits";
+import Trailers from "../../components/Trailers/Trailers";
+import {fetchVideoMovie} from "../../redux/actions/movies/fetchVideoMovie";
+import {fetchVideoSeries} from "../../redux/actions/tv/fetchVideoSeries";
 
 export default function DetailMovie() {
     const params = useParams();
@@ -22,10 +25,12 @@ export default function DetailMovie() {
             if (params.category === 'movie'){
                 dispatch(fetchDetail(params.id))
                 dispatch(fetchCredits(params.category, params.id))
+                dispatch(fetchVideoMovie(params.id))
             }
             if (params.category === 'tv') {
                 dispatch(fetchDetailSeries(params.id))
                 dispatch(fetchCredits(params.category, params.id))
+                dispatch(fetchVideoSeries(params.id))
             }
             setLoading(false);
         };
@@ -37,59 +42,64 @@ export default function DetailMovie() {
     }, [loading, dispatch, params.id, params.category])
 
     let loadData;
-    if (params.category === 'movie')
-        loadData = movies.detail
-    if (params.category === 'tv')
-        loadData = series.detailSeries
+    let videos;
+    if (params.category === 'movie'){
+        loadData = movies.detail;
+        videos = movies.videoMovies;
+    }
+    if (params.category === 'tv'){
+        loadData = series.detailSeries;
+        videos = series.videoSeries;
+    }
 
     let imageURL;
     if (loadData.backdrop_path)
-        imageURL = `http://image.tmdb.org/t/p/w1280/` + loadData.backdrop_path;
+        imageURL = `http://image.tmdb.org/t/p/original/` + loadData.backdrop_path;
 
     if (loading) return null;
 
-    console.log(credits)
+    let crewLength;
+    if (credits.credits.crew)
+        crewLength = credits.credits.crew.length;
+
+    let castLength;
+    if (credits.credits.cast)
+        castLength = credits.credits.cast.length;
 
     return (
-        <div className="mdb-detail">
-            <div className="mdb-detail-background">
-                <div className="mdb-detail-background-shadow" />
-                <div
-                    className="mdb-detail-background-image"
-                    style={{ backgroundImage: imageURL ? `url(${imageURL})` : '' }}
-                />
-            </div>
-            <div className="mdb-detail-area">
-                <div className="mdb-detail-area-container">
-                    <div className="mdb-detail-title">
-                        {loadData.name ? loadData.name : loadData.title}
-                    </div>
-                    <div className="mdb-detail-subtitle">
-                        {loadData.tagline}
-                    </div>
-                    {/*             Overview              */}
-                    <div className="mdb-detail-description">
-                        {loadData.overview ? loadData.overview: ''}
-                    </div>
-                    {/*             Credits Casts           */}
-                    <div className='mdb-detail-cast'>
-                        <CreditsCaousel casts={credits.credits.cast}
-                                        title={'Casts'}
-                        />
-                    </div>
-                    <div className='mdb-detail-cast'>
-                        <CreditsCaousel casts={credits.credits.crew}
-                                        title={'Crew'}
-                        />
-                    </div>
-                    {/*<div className='mdb-detail-buttons'>*/}
-                    {/*    /!*<Trailers videos={props.videos}/>*!/*/}
-                    {/*</div>*/}
+        <React.Fragment>
+            <div className="mdb-detail"
+                 style={{ backgroundImage: imageURL ?
+                         `linear-gradient(to right, rgba(0, 0, 0, 1)
+                         30%,
+                         rgba(0, 0, 0, 0)),
+                         url(${imageURL})` : '' }}
+            >
+                <div className='mdb-detail-content'>
+                    <h1>{loadData.name ? loadData.name : loadData.title}</h1>
+                    <h2>{loadData.tagline}</h2>
+                    <p>{loadData.overview ? loadData.overview: ''}</p>
+                    <Trailers  videos={videos}/>
+                    {castLength > 0 ?
+                        <div className='mdb-detail-cast'>
+                            <CreditsCaousel casts={credits.credits.cast}
+                                            title={'Casts'}/>
+                        </div>
+                        :
+                        ''
+                    }
+
+                    {crewLength > 0 ?
+                        <div className='mdb-detail-crew'>
+                            <CreditsCaousel casts={credits.credits.crew}
+                                            title={'Crew'}/>
+                        </div>
+                        :
+                        ''
+                    }
+
                 </div>
             </div>
-        </div>
-        // <div>
-        //     <h1>{loadData.name ? loadData.name : loadData.title}</h1>
-        // </div>
+        </React.Fragment>
     )
 }

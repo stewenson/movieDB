@@ -5,13 +5,11 @@ import {Carousel} from "../../components/carousel/Carousel";
 import '../../styles/Home.scss';
 import {MovieInfo} from "../../containers/movieInfo/movieInfo";
 import {fetchPopuparSeries} from "../../redux/actions/tv/fetchPopularSeries";
-import {fetchVideoMovie} from "../../redux/actions/movies/fetchVideoMovie";
 import {fetchDetail} from "../../redux/actions/detail/fetchDetail";
 import {fetchTopRated} from "../../redux/actions/movies/fetchTopRated";
 import {fetchUpcoming} from "../../redux/actions/movies/fetchUpcoming";
 import {SeriesInfo} from "../../containers/seriesInfo/seriesInfo";
 import {fetchDetailSeries} from "../../redux/actions/detail/fetchDetailSeries";
-import {fetchVideoSeries} from "../../redux/actions/tv/fetchVideoSeries";
 import {fetchTopRatedSeries} from "../../redux/actions/tv/fetchTopRatedSeries";
 import {fetchAiringToday} from "../../redux/actions/tv/fetchAiringToday";
 
@@ -29,8 +27,6 @@ export default function Home() {
             dispatch(fetchPopularMovies())
             dispatch(fetchTopRated())
             dispatch(fetchUpcoming())
-            if (movies.detail.id)
-                dispatch(fetchVideoMovie(movies.detail.id))
             setLoading(false);
         };
         loadData();
@@ -44,8 +40,6 @@ export default function Home() {
             dispatch(fetchPopuparSeries())
             dispatch(fetchTopRatedSeries())
             dispatch(fetchAiringToday())
-            if (series.detailSeries.id)
-                dispatch(fetchVideoSeries(series.detailSeries.id))
             setLoading(false);
         };
         loadData();
@@ -58,7 +52,6 @@ export default function Home() {
             */}
             <div className='mdb-movieInfo-container'>
                 <MovieInfo
-                    videos={movies.videoMovies}
                     id={movies.detail.id}
                     image={movies.detail.backdrop_path}
                     title={movies.detail.original_title}
@@ -81,7 +74,6 @@ export default function Home() {
             */}
             <div className='mdb-seriesInfo-container'>
                 <SeriesInfo
-                    videos={series.videoSeries}
                     id={series.detailSeries.id}
                     image={series.detailSeries.backdrop_path}
                     name={series.detailSeries.name}

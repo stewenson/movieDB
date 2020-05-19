@@ -8,237 +8,196 @@
   }
 }
 
-// Detail screens
+// Detailscreens
 .mdb-detail {
   position: relative;
-  height: 99vh;
-  margin-top: -50px;
-  animation: animateMovieinfo 1.6s;
-  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  margin: -60px 0px;
+  background-position: center !important;
+  background-size: cover !important;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  animation: animate 1s;
 
-  .mdb-detail-background,
-  .mdb-detail-background-shadow,
-  .mdb-detail-background-image,
-  .mdb-detail-area {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    animation: animateMovieinfo 1.6s;
+  .mdb-detail-content {
+    padding-top: 50px;
+    max-width: 50%;
+    margin-left: 50px;
+
+    h1 {
+      text-transform: uppercase;
+      color: white;
+      font-size: 2.6em;
+      font-family: serif;
+    }
+
+    h2 {
+      font-weight: 400;
+      font-size: 1.4em;
+      color: white;
+      letter-spacing: 0.1em;
+    }
+
+    p {
+      font-size: 1em;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      line-height: 1.5em;
+      color: white;
+    }
+
+    .MuiSvgIcon-root {
+      font-size: 2rem;
+      color: white;
+      margin-right: 6px;
+    }
+
+    .MuiButton-label {
+      color: white;
+      font-weight: 500;
+      text-transform: none;
+      font-size: 1.5em;
+      letter-spacing: 2px;
+    }
+    animation: animate 1s;
   }
-  //
-  .mdb-detail-background {
-    position: fixed;
-    left: 0;
-    right: 0;
-    animation: animateMovieinfo 1.6s;
-  //
-    .mdb-detail-background-shadow {
-      left: 0;
-      background: #000;
-      width: 40%;
-      z-index: 2;
-      animation: animateMovieinfo 1.6s;
+}
+@media (min-width: 0px) and (max-width: 360px) {
+  .mdb-detail {
+    .mdb-detail-content {
+      padding-top: 50px;
+      max-width: 80% !important;
+      margin-left: 40px !important;
+      h1{
+        font-size: 1.6em;
+      }
+      h2 {
+        font-size: 1em !important;
+      }
 
-      &:before {
-        content: '';
-        position: absolute;
-        z-index: 10;
-        //background-image: linear-gradient(to right, #000, transparent);
-        background-image: linear-gradient(to right, rgba(0,0,0,1) 30%, rgba(0,0,0,0));
-        top: 0;
-        bottom: 0;
-        left: 100%;
-        width: 15vw;
+      p {
+        font-size: 0.8em !important;
+      }
+
+    }
+  }
+}
+@media (min-width: 361px) and (max-width: 414px) {
+  .mdb-detail {
+    .mdb-detail-content {
+      padding-top: 50px;
+      max-width: 80% !important;
+      margin-left: 40px !important;
+      h1{
+        font-size: 1.8em;
+      }
+      h2 {
+        margin-top: 10px !important;
+        font-size: 1em !important;
+      }
+      p {
+        font-size: 0.8em !important;
+      }
+
+    }
+  }
+}
+
+@media (min-width: 415px) and (max-width: 768px) {
+  .mdb-detail {
+    .mdb-detail-content {
+      padding-top: 50px;
+      max-width: 80% !important;
+      margin-left: 40px !important;
+      h1{
+        font-size: 2em;
+      }
+      h2 {
+        font-size: 1em !important;
+      }
+
+      p {
+        font-size: 0.9em !important;
+      }
+
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .mdb-detail {
+    .mdb-detail-content {
+      padding-top: 50px;
+      max-width: 70% !important;
+      margin-left: 40px !important;
+      h1{
+        font-size: 2.2em;
+      }
+      h2 {
+        font-size: 1.4em !important;
+      }
+
+      p {
+        font-size: 1.2em !important;
+      }
+      .MuiSvgIcon-root {
+        font-size: 3rem;
+      }
+      .MuiButton-label {
+        font-size: 2em;
       }
     }
+  }
+}
+@media (min-width: 1025px) and (max-width: 1300px) {
+  .mdb-detail {
+    .mdb-detail-content {
+      padding-top: 50px;
+      max-width: 70% !important;
+      margin-left: 40px !important;
+      h1{
+        font-size: 2.4em;
+      }
+      h2 {
+        font-size: 1.6em !important;
+      }
 
-    // Bckground image
-    .mdb-detail-background-image {
-      right: 0;
-      width: 70%;
-      height: 100%;
-      background-position: center 10%;
-      background-size: cover;
-      z-index: 1;
-      animation: animateMovieinfo 1.6s;
+      p {
+        font-size: 1.4em !important;
+      }
+      .MuiSvgIcon-root {
+        font-size: 2.5rem;
+      }
+      .MuiButton-label {
+        font-size: 1.5em;
+      }
     }
   }
+}
+@media (min-width: 1301px) and (max-width: 1600px) {
+  .mdb-detail {
+    .mdb-detail-content {
+      padding-top: 50px;
+      max-width: 60% !important;
+      margin-left: 40px !important;
+      h1{
+        font-size: 2.4em;
+      }
+      h2 {
+        font-size: 1.4em !important;
+      }
 
-  .mdb-detail-area {
-    left: 0;
-    right: 0;
-    height: 100%;
-    z-index: 3;
-    animation: animateMovieinfo 1.6s;
-
-    .mdb-detail-area-container {
-      padding: 100px 50px;
-      color: wheat;
-      animation: animateMovieinfo 1.6s;
+      p {
+        font-size: 1.2em !important;
+      }
+      .MuiSvgIcon-root {
+        font-size: 2.5rem;
+      }
+      .MuiButton-label {
+        font-size: 1.5em;
+      }
     }
-  }
-
-  .mdb-detail-title {
-    font-size: 3em;
-    color: #fff;
-    margin-bottom: 10px;
-    font-weight: 700;
-    animation: animateMovieinfo 1.6s;
-    p{
-      padding-top: 5px;
-      font-size: 20px;
-    }
-  }
-  .mdb-detail-subtitle {
-    font-size: 1.5em;
-    display: inline-flex;
-    color: #fff;
-    animation: animateMovieinfo 1.6s;
-    p{
-      margin-bottom: 0px;
-      margin-top: 0px;
-      padding: 0px 5px;
-      border-left: 2px solid white;
-    };
-  }
-
-  .mdb-detail-description {
-    padding-top: 10px;
-    font-size: 1em;
-    color: #999;
-    margin-top: 0;
-    max-width: 90vh;
-    animation: animateMovieinfo 1.6s;
-  }
-
-  .mdb-detail-cast {
-    margin-top: 10px;
-    margin-bottom: -10px;
-    max-width: 90vh;
-  }
-
-  .mdb-detail-buttons {
-    display: flex;
-    padding-top: 10px;
-    button {
-      margin-left: 50px;
-      font-size: x-small;
-    }
-    animation: animateMovieinfo 1.6s;
-  }
-}
-
-@media only screen and (max-width: 1700px) {
-  .mdb-detail-description {
-    padding-top: 15px;
-    font-size: 1.5vw !important;
-    max-width: 60vh !important;
-  }
-  .mdb-detail-cast {
-    max-width: 90vh !important;
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-  .mdb-detail-area-container {
-    padding: 70px 30px !important;
-    color: wheat;
-    animation: animateMovieinfo 1.6s;
-  }
-  .mdb-detail-title {
-    padding-top: 10px;
-    font-size: 2.3em !important;
-  }
-  .mdb-detail-subtitle {
-    font-size: 1.5em !important;
-  }
-  .mdb-detail-description {
-    max-width: 60vh !important;
-    font-size: 1.2em !important;
-  }
-  .mdb-detail-cast {
-    max-width: 60vh !important;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .mdb-detail-area-container {
-    padding: 70px 30px !important;
-    color: wheat;
-    animation: animateMovieinfo 1.6s;
-  }
-  .mdb-detail-title {
-    font-size: 2em !important;
-  }
-  .mdb-detail-subtitle {
-    font-size: 1.5em !important;
-  }
-  .mdb-detail-description {
-    max-width: 40vh !important;
-    font-size: 1.2em !important;
-  }
-  .mdb-detail-cast {
-    max-width: 100vh !important;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .mdb-detail-area-container {
-    padding: 70px 30px !important;
-    color: wheat;
-    animation: animateMovieinfo 1.6s;
-  }
-  .mdb-detail-title {
-    font-size: 1.7em !important;
-  }
-  .mdb-detail-subtitle {
-    font-size: 1.2em !important;
-  }
-  .mdb-detail-description {
-    max-width: 40vh !important;
-    font-size: 1.2em !important;
-  }
-  .mdb-detail-cast {
-    max-width: 100vh !important;
-  }
-}
-
-@media only screen and (max-width: 414px) {
-  .mdb-detail-area-container {
-    padding: 70px 20px !important;
-    color: wheat;
-    animation: animateMovieinfo 1.6s;
-  }
-  .mdb-detail-title {
-    font-size: 1.7em !important;
-  }
-  .mdb-detail-subtitle {
-    font-size: 1.2em !important;
-  }
-  .mdb-detail-description {
-    max-width: 30vh !important;
-    font-size: 1em !important;
-  }
-  .mdb-detail-cast {
-    max-width: 100vh !important;
-  }
-}
-
-@media only screen and (max-width: 360px) {
-  .mdb-detail-area-container {
-    padding: 70px 20px !important;
-    color: wheat;
-    animation: animateMovieinfo 1.6s;
-  }
-  .mdb-detail-title {
-    font-size: 1.5em !important;
-  }
-  .mdb-detail-subtitle {
-    font-size: 1em !important;
-  }
-  .mdb-detail-description {
-    font-size: 1em !important;
-  }
-  .mdb-detail-cast {
-    max-width: 100vh !important;
   }
 }

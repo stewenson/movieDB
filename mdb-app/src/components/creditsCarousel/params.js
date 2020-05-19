@@ -1,7 +1,15 @@
 export const params = {
     breakpoints: {
-        // when window width is >= 320px
         320: {
+            slidesPerView: 3,
+            spaceBetween: 1
+        },
+        // when window width is >= 320px
+        360: {
+            slidesPerView: 3,
+            spaceBetween: 1
+        },
+        411: {
             slidesPerView: 4,
             spaceBetween: 1
         },
@@ -10,19 +18,23 @@ export const params = {
             slidesPerView: 5,
             spaceBetween: 1
         },
-        // when window width is >= 630px
-        700: {
+        600: {
             slidesPerView: 6,
+            spaceBetween: 1
+        },
+        // when window width is >= 630px
+        750: {
+            slidesPerView: 7,
             spaceBetween: 1,
         },
         // when window width is >= 850px
         850: {
-            slidesPerView: 5,
+            slidesPerView: 8,
             spaceBetween: 1,
         },
         // when window width is >= 1200px
         1100: {
-            slidesPerView: 7,
+            slidesPerView: 9,
             spaceBetween: 1,
         },
         // when window width is >= 1200px
