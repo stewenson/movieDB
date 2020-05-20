@@ -22,30 +22,64 @@
   animation: animate 1s;
 
   .mdb-detail-content {
-    padding-top: 50px;
-    max-width: 50%;
-    margin-left: 50px;
-
+    margin-top: 50px;
+    //max-width: 50%;
+    //margin-left: 50px;
     h1 {
+      text-align: center;
+      padding-bottom: 30px;
       text-transform: uppercase;
       color: white;
-      font-size: 2.6em;
+      font-size: 2.8em;
       font-family: serif;
+      font-style: italic;
     }
-
     h2 {
-      font-weight: 400;
-      font-size: 1.4em;
+      padding-bottom: 10px;
       color: white;
+      font-weight: 500;
+      font-size: 1.2em;
       letter-spacing: 0.1em;
     }
-
+    h3{
+      padding: 10px 10px 10px;
+      font-family: cursive;
+      color: white;
+      font-size: 1.7em;
+      font-weight: 400;
+    }
+    h4{
+      font-weight: 400;
+      padding: 10px 5px;
+      line-height: 0.2em;
+      color: #3dff2f;
+      font-size: 1.2em;
+    }
     p {
       font-size: 1em;
       font-weight: 300;
       letter-spacing: 0.02em;
       line-height: 1.5em;
       color: white;
+    }
+    .mdb-detail-boxOffice{
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background: rgba(71, 68, 68, 0.3);
+    }
+    .mdb-detail-basicInfo{
+      h5{
+        font-weight: 400;
+        color: white;
+        font-size: 1.2em;
+      }
+      .mdb-detail-vote-average{
+        display: flex;
+        .MuiSvgIcon-root{
+          font-size: 1.5em;
+          color: orange;
+        }
+      }
     }
 
     .MuiSvgIcon-root {
@@ -63,39 +97,77 @@
     }
     animation: animate 1s;
   }
+  .mdb-detail-credits{
+    h2{
+      color: white;
+      font-size: 1.5em;
+      font-weight: 400;
+      font-style: oblique;
+      padding-left: 25px;
+    }
+  }
 }
 @media (min-width: 0px) and (max-width: 360px) {
   .mdb-detail {
     .mdb-detail-content {
-      padding-top: 50px;
-      max-width: 80% !important;
-      margin-left: 40px !important;
-      h1{
-        font-size: 1.6em;
+      h1 {
+        padding-top: 50px;
+        font-size: 1.2em;
       }
+
       h2 {
         font-size: 1em !important;
+      }
+
+      h3 {
+        font-size: 1em;
+      }
+
+      h4 {
+        padding: -10px -20px;
+        font-size: 0.8em;
       }
 
       p {
         font-size: 0.8em !important;
       }
+    }
 
+    .MuiGrid-spacing-xs-3 > .MuiGrid-item {
+      padding: 2px;
+    }
+
+    .mdb-detail-basicInfo {
+      h5 {
+        font-size: 1em !important;
+      }
+      .mdb-detail-vote-average {
+        display: flex;
+
+        .MuiSvgIcon-root {
+          font-size: 1.5em;
+          color: orange;
+        }
+      }
     }
   }
 }
 @media (min-width: 361px) and (max-width: 414px) {
   .mdb-detail {
     .mdb-detail-content {
-      padding-top: 50px;
-      max-width: 80% !important;
-      margin-left: 40px !important;
+      //padding-top: 50px;
+      //max-width: 80% !important;
+      //margin-left: 40px !important;
       h1{
-        font-size: 1.8em;
+        padding-top: 50px;
+        padding-bottom: 20px;
+        font-size: 1.5em;
       }
       h2 {
-        margin-top: 10px !important;
         font-size: 1em !important;
+      }
+      h3{
+
       }
       p {
         font-size: 0.8em !important;
@@ -109,7 +181,7 @@
   .mdb-detail {
     .mdb-detail-content {
       padding-top: 50px;
-      max-width: 80% !important;
+      //max-width: 80% !important;
       margin-left: 40px !important;
       h1{
         font-size: 2em;
@@ -130,7 +202,7 @@
   .mdb-detail {
     .mdb-detail-content {
       padding-top: 50px;
-      max-width: 70% !important;
+      //max-width: 70% !important;
       margin-left: 40px !important;
       h1{
         font-size: 2.2em;
@@ -155,7 +227,7 @@
   .mdb-detail {
     .mdb-detail-content {
       padding-top: 50px;
-      max-width: 70% !important;
+      //max-width: 70% !important;
       margin-left: 40px !important;
       h1{
         font-size: 2.4em;
@@ -180,7 +252,7 @@
   .mdb-detail {
     .mdb-detail-content {
       padding-top: 50px;
-      max-width: 60% !important;
+      //max-width: 60% !important;
       margin-left: 40px !important;
       h1{
         font-size: 2.4em;

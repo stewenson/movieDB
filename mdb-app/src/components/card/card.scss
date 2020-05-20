@@ -2,17 +2,18 @@ $position-relative: relative;
 $position-absolute: absolute;
 @mixin details {
   position: $position-absolute;
-  padding: 20px;
+  padding: 0px;
   width: 100%;
   box-sizing: border-box;
   transition: 0.5s;
-  z-index: 2;
+  z-index: -1;
   bottom: -70px;
 }
 
 .mdb-card{
+  border-radius: 50%;
   position: $position-relative;
-  height: 100%;
+  height: 120px;
   overflow: hidden;
   .mdb-poster {
     position: relative;
@@ -21,7 +22,7 @@ $position-absolute: absolute;
 }
 .mdb-details {
   @include details;
-  height: 90%;
+  height: 60%;
   h3 {
     font-size: 15px;
     color: white;
@@ -41,12 +42,13 @@ $position-absolute: absolute;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, #000 20%, transparent);
+  background: linear-gradient(0deg, #000 1%, transparent);
   transition: 0.5s;
   z-index: 1;
 }
 .mdb-card:hover .mdb-details {
   bottom: 0;
+  z-index: 1;
   h3 span {
     margin: 0;
     padding: 0;

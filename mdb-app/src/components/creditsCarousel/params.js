@@ -6,7 +6,7 @@ export const params = {
         },
         // when window width is >= 320px
         360: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 1
         },
         411: {
@@ -50,8 +50,8 @@ export const params = {
         },
         // when window width is >= 1700px
         1700: {
-            slidesPerView: 8,
-            spaceBetween: 1
+            slidesPerView: 9,
+            spaceBetween: 10
         },
         // when window width is >= 2100px
         2100: {

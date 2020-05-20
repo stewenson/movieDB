@@ -2,7 +2,6 @@ import React from "react";
 import {Link} from 'react-router-dom';
 import '../../styles/MovieInfo.scss';
 import {TitleDate} from "../../components/TitleDate/TitleDate";
-import Genres from "../genres/genres";
 import {ReadMore} from "../../styles/LinkStyles";
 import Grid from "@material-ui/core/Grid";
 
@@ -21,24 +20,24 @@ export const MovieInfo = (props) => {
         >
             <div className='mdb-content-description'>
                 <h1>{props.title}</h1>
-                <Grid container spacing={1}>
+
+                <Grid container spacing={4}>
                     <Grid item>
                         <h2>
-                            {props.release_date ? TitleDate(props.release_date) : ''}
+                            Released on {props.release_date ? TitleDate(props.release_date) : ''}
                         </h2>
                     </Grid>
                     <Grid item>
                         <h2>
-                            - {props.vote_average}/10
+                            {props.vote_average}/10
                         </h2>
                     </Grid>
                     <Grid item>
                         <h2>
-                            - {props.runtime} min
+                            {props.runtime} min
                         </h2>
                     </Grid>
                 </Grid>
-                <Genres genres={props.genres}/>
                 <p>{props.overview ? props.overview.slice(0, 400) +'...' : ''}</p>
                 <div className='mdb-content-buttons'>
                     <Link style={{ textDecoration: 'none' }}

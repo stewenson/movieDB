@@ -1,0 +1,16 @@
+@keyframes animate {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+.mdb-movie-container {
+  animation: animate 1s;
+}
+.mdb-movie-carousel-container {
+  width: 90%;
+  align-items: center;
+}

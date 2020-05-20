@@ -5,7 +5,7 @@ export const Card = ({img, name, character}) => {
 
     let photo;
     if (img) {
-        photo = `http://image.tmdb.org/t/p/w154/`+ img;
+        photo = `http://image.tmdb.org/t/p/w185/`+ img;
     } else {
         photo = 'https://i.pinimg.com/originals/4c/9e/b8/4c9eb8648c560dae6719b134950f6ac3.jpg';
     }
